@@ -12,6 +12,7 @@ const bot = new Telegraf<Scenes.SceneContext>(conf.botToken);
   await pause(1000);
 
   let users = await db.getUsers();
+  console.log("users", users)
   let usersIds = users ? Object.keys(users) : [];
 
   bot.on('text', async (ctx) => {
